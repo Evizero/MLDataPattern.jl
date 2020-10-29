@@ -3,16 +3,13 @@ using StatsBase
 using LearnBase
 using MLLabelUtils
 
-using LearnBase: ObsDimension
-import LearnBase: nobs, getobs, getobs!, gettarget, gettargets, targets, datasubset, default_obsdim
+import LearnBase: getobs, getobs!, gettarget, gettargets, targets, datasubset, default_obsdim
 
 using Base.Cartesian
 using Random
 using SparseArrays
 
 export
-
-    ObsDim,
 
     nobs,
     getobs,
@@ -35,8 +32,8 @@ export
     SlidingWindow,
     slidingwindow,
 
-    targets,
-    eachtarget,
+    # targets,
+    # eachtarget,
 
     stratifiedobs,
 
@@ -56,11 +53,11 @@ export
     eachobs,
     eachbatch
 
-obsdim_string(::ObsDim.First) = ":first"
-obsdim_string(::ObsDim.Last) = ":last"
-obsdim_string(::ObsDim.Constant{D}) where {D} = string(D)
-obsdim_string(::ObsDim.Undefined) = "\"NA\""
-obsdim_string(obsdim::Tuple) = string("(", join(map(obsdim_string, obsdim), ", "), ")")
+# obsdim_string(::ObsDim.First) = ":first"
+# obsdim_string(::ObsDim.Last) = ":last"
+# obsdim_string(::ObsDim.Constant{D}) where {D} = string(D)
+# obsdim_string(::ObsDim.Undefined) = "\"NA\""
+# obsdim_string(obsdim::Tuple) = string("(", join(map(obsdim_string, obsdim), ", "), ")")
 
 include("container.jl")
 include("datasubset.jl")
